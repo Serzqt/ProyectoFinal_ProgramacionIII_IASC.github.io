@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Programacion III</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <style>
+		body {
+			background-color: rgb(17, 17, 17); 	
+		}
+		#titulo {
+            text-align: center;
+			color: rgb(226, 226, 226);
+			font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		}
+        #botones {
+            text-align: center;
+			padding-bottom: 20px;
+			color: rgb(226, 226, 226);
+        }
+		#tabla {
+			text-align: center;
+			color: rgb(226, 226, 226);
+		}
+		#tablr {
+			text-align: center;
+			color: rgb(226, 226, 226);
+		}
+		#misdatos {
+            text-align: center;
+			padding-bottom: 10px;
+			color: rgb(226, 226, 226);
+        }
+		#copy {
+            text-align: center;
+			padding-bottom: 10px;
+        }
+		hr {
+			border-color: rgb(58, 58, 58);
+		}
+    </style>
+  </head>
+  <body>
+    <!-- Elementos de HTML-->
+	<div id="titulo">
+		<h1>Mi Musify</h1>
+	</div>
+	<hr>
+
+	<div id="botones">
+		<button onclick="cancion1()"><img width="50" src="https://i.scdn.co/image/ab67616d0000b273bfa99afb5ef0d26d5064b23b" alt="The Adults Are Talking"></button>
+		<button onclick="cancion2()"><img width="50" src="https://www.quantumbabylon.org/uploads/1/2/4/5/124509259/published/californication-red-hot-game-4-588.jpg?1646830142" alt="Scar Tissue"></button>
+		<button onclick="cancion3()"><img width="50" src="https://upload.wikimedia.org/wikipedia/en/a/a0/Save-Rock-And-Roll.jpg" alt="My Songs Know What You Did In The Dark"></button>
+		<button onclick="cancion4()"><img width="50" src="https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/74/6f/0d/746f0d1b-f129-157a-cab6-2e38839b2047/198469231964_xDABAADDFECGeshuouSpaghettiWestern.jpg/1200x1200bb.jpg" alt="GESHUOU"></button>
+		<button onclick="cancion5()"><img width="50" src="https://i.scdn.co/image/ab67616d0000b27309a90531b85be7899c3234c4" alt="This fire"></button>
+		<button onclick="cancion6()"><img width="50" src="https://i.scdn.co/image/ab67616d0000b2734f3bbf9631faeb8de9912a23" alt="All star"></button>
+	</div>
+
+	<div class="container">
+		<table id="tabla" data-height="460" data-auto-refresh="true">
+			<thead id="tablr">
+				<tr id="tabla">
+					<th data-field="ImagenDelArtista">Imagen del Artista</th>
+					<th data-field="NombreDelArtista">Artista</th>
+					<th data-field="NombreCancion">Canción</th>
+					<th data-field="Genero">Género de la canción</th>
+					<th data-field="DuracionDeCancion">⧗</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+
+	<hr>
+
+	<div id="misdatos">
+		<h4>Mi nombre: Serrano Carrillo, Israel Alejandro.</h1>    
+		<h4>E-Mail: israel.serrano3091@alumnos.udg.mx</h1>
+		<h4>Preparatoria San José del Valle.</h1>
+		<h4>Materia: Programación III.</h1>
+		<h4>Profesor: Sanchez Cuenca, Angel Emmanuel.</h1>
+	</div>
+	<b><h5 id="copy">Copyright © Todos los derechos reservados</h1></b>
+  </body>
+  <script>
+      	/* Javascript */   
+		$(function () {
+			$('#tabla').bootstrapTable({
+				data: datos,
+				formatNoMatches: function () {
+					return 'No hay datos';
+				}
+			});
+		});
+		
+		var datos = [];
+
+		function muestraDatos(){
+			$('#tabla').bootstrapTable('load', datos);
+		}
+
+		// Aqui abajo agrega tus funciones
+		
+		function cancion1(){
+			let c1 = {
+				NombreCancion: "The Adults Are Talking",
+				NombreDelArtista: "The Strokes",
+				Genero: "Rock",
+				DuracionDeCancion: "5:09",
+				ImagenDelArtista: "<img width=\"150\" src=\"https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQQVT-ZX2I4ypG9n7uLRUNJRFJ7JkmOfa6xrGswOzHDE82f9phuNFtSV1jbx1np9axIP9Gxh8uXYrv3B0OWie1K0A\" >"
+			}
+			datos.push(c1);
+			muestraDatos();
+		}
+		function cancion2(){
+			let c2 = {
+				NombreCancion: "Scar Tissue",
+				NombreDelArtista: "Red Hot Chili Peppers",
+				Genero: "Rock",
+				DuracionDeCancion: "3:36",
+				ImagenDelArtista: "<img width=\"150\" src=\"https://thisis-images.spotifycdn.com/37i9dQZF1DZ06evO0nT692-default.jpg\" >"
+			}
+			datos.push(c2);
+			muestraDatos();
+		}
+		function cancion3(){
+			let c3 = {
+				NombreCancion: "My Songs Know What You Did In The Dark",
+				NombreDelArtista: "Fall Out Boy",
+				Genero: "Rock Alternativo / Pop Metal",
+				DuracionDeCancion: "3:07",
+				ImagenDelArtista: "<img width=\"150\" src=\"https://i.scdn.co/image/ab6761610000e5eb362011ebe6064c38e97e9aac\" >"
+			}
+			datos.push(c3);
+			muestraDatos();
+		}
+		function cancion4(){
+			let c4 = {
+				NombreCancion: "GESHUOU",
+				NombreDelArtista: "INOHA",
+				Genero: "Rock",
+				DuracionDeCancion: "3:19",
+				ImagenDelArtista: "<img width=\"150\" src=\"https://i.scdn.co/image/ab6761610000e5ebb25ca2159c8e56a8ab4f9766\" >"
+			}
+			datos.push(c4);
+			muestraDatos();
+		}
+		function cancion5(){
+			let c5 = {
+				NombreCancion: "This fire",
+				NombreDelArtista: "Franz Ferdinand",
+				Genero: "Rock / Pop",
+				DuracionDeCancion: "4:14",
+				ImagenDelArtista: "<img width=\"150\" src=\"https://cdn-images.dzcdn.net/images/artist/0312c5b8e0c0f9ac7b0c4a1dfbd21d4e/1900x1900-000000-80-0-0.jpg\" >"
+			}
+			datos.push(c5);
+			muestraDatos();
+		}
+		function cancion6(){
+			let c6 = {
+				NombreCancion: "All star",
+				NombreDelArtista: "Smash Mouth",
+				Genero: "Rock / Pop",
+				DuracionDeCancion: "3:20",
+				ImagenDelArtista: "<img width=\"150\" src=\"https://cdn-images.dzcdn.net/images/artist/74407908e9abe8d44943ecd52b024baa/1900x1900-000000-80-0-0.jpg\" >"
+			}
+			datos.push(c6);
+			muestraDatos();
+		}
+
+
+  </script>
+</html>
+    
+    
